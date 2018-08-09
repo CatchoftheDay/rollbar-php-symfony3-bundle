@@ -80,7 +80,7 @@ class GeneratorTest extends KernelTestCase
         $this->assertArrayHasKey('argv', $data);
 
         $this->assertEquals($data['host'], gethostname());
-        $this->assertEquals($data['root'], static::$kernel->getRootDir());
+        $this->assertEquals($data['root'], static::$kernel->getProjectDir());
         $this->assertEquals($data['user'], get_current_user());
     }
 

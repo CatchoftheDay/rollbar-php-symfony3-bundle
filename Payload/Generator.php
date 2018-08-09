@@ -138,7 +138,7 @@ class Generator
 
         return [
             'host' => gethostname(),
-            'root' => $kernel->getRootDir(),
+            'root' => $kernel->getProjectDir(),
             'user' => get_current_user(),
             'file' => array_shift($args),
             'argv' => implode(' ', $args),
