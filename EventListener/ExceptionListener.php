@@ -2,10 +2,7 @@
 
 namespace Rollbar\Symfony\RollbarBundle\EventListener;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
-use Psr\Log\LoggerInterface;
-use Rollbar\Symfony\RollbarBundle\Payload\Generator;
 
 class ExceptionListener extends AbstractListener
 {
@@ -28,7 +25,7 @@ class ExceptionListener extends AbstractListener
     /**
      * Handle provided exception
      *
-     * @param $exception
+     * @param \Exception $exception
      */
     public function handleException($exception)
     {
@@ -37,6 +34,7 @@ class ExceptionListener extends AbstractListener
         
         $this->getLogger()->error($message, [
             'payload' => $payload,
+            'exception' => $exception,
         ]);
     }
 }
