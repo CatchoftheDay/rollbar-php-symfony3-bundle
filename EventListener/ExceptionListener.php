@@ -30,7 +30,7 @@ class ExceptionListener extends AbstractListener
     /**
      * Handle provided exception
      *
-     * @param mixed $exception
+     * @param \Exception $exception
      */
     public function handleException($exception)
     {
