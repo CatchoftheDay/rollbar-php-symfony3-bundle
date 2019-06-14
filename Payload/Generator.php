@@ -123,7 +123,7 @@ class Generator
             'method'       => $request->getMethod(),
             'headers'      => $request->headers->all(),
             'query_string' => $request->getQueryString(),
-            'body'         => $request->getContent(),
+            'body'         => '******', // $request->getContent(),
             'user_ip'      => $request->getClientIp(),
         ];
     }
